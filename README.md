@@ -31,7 +31,7 @@ console.log(resultColor); // Outputs: rgb(128, 0, 128)
 
 ## 📸 Example
 
-Coming soon...
+![Color Transition Examples](./example_gradients.jpg)
 
 ## 🌟 Why Choose Huefy?
 
