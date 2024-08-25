@@ -1,31 +1,97 @@
-# Getting Started with Your Node TypeScript NPM Package
+# 🌟 Huefy
 
-Follow these steps to customize and set up your package:
+Smooth color transitions with customizable curves and support for mixing multiple color formats like HEX, RGB, RGBA, HSL, HSV, HWB, CMYK, and color keywords.
 
-1. **Update Package Name**  
-   - Modify _your-package-name_ in _package.json_ and other relevant files to reflect your package's name.
+### Key Features:
+- **Smooth Interpolation:** Seamlessly transition between colors using customizable curve functions.
+- **Multiple Color Formats:** Output colors in HEX, RGB, RGBA, HSL, HSV, HWB, CMYK, and color keyword (red, green, blue...) format.
+- **Easy to Use:** Simple API for both JavaScript and command-line usage.
+- **Customizable:** Choose different interpolation curves for your color transitions.
 
-2. **Update Command Line Interface (CLI) Command**  
-   - Update the _bin/*_ files to define the CLI command you want to use.
-   - Reflect these changes in the _package.json_ under the _bin_ section.
+## 🚀 Installation
 
-3. **Setup Git Repository**  
-   - Initialize your Git repository.
-   - Add GitHub Actions as _coverall-github-action-workflow_ (copy and paste is fine, but feel free to modify if needed).
+```bash
+npm install huefy
+```
 
-4. **Fill in the README**  
-   - Provide detailed information about your package in the README file.
+## 🛠 Getting Started
 
-5. **Add Your Code**  
-   - Add your package files to the _src/*_ directory.
+To get started with Huefy, import the function and start creating beautiful color transitions:
 
-6. **Use .js Extensions**  
-   - Ensure that all imports use _.js_ extensions, since this package outputs both ESM and CJS formats.
+```javascript
+import huefy from 'huefy';
 
-7. **Modify .gitignore**  
-   - The _.gitignore_ file is already set up, but feel free to add any other files you want to ignore.
+const startColor = '#ff0000';
+const endColor = '#0000ff';
+const percentage = 0.5;
 
-8. **Configure TypeScript**  
-   - Modify the TypeScript configuration in _config/*_ to suit your needs.
-   - _esModuleInterop_ is turned off in _tsconfig_ because this is a package. If you turn it on, any other package using this will need to have it enabled too.
-# huefy
+const resultColor = huefy(startColor, endColor, percentage, { as: 'rgb' });
+console.log(resultColor); // Outputs: rgb(128, 0, 128)
+```
+
+## 📸 Example
+
+Coming soon...
+
+## 🌟 Why Choose Huefy?
+
+Huefy provides a simple yet powerful way to create smooth color transitions with support for a wide range of color formats and customizable interpolation curves.
+
+## 🌍 Supported Environments
+
+- Node.js 14+
+- ES Modules (import/export)
+- CommonJS (require)
+
+## 🎨 Customization
+
+You can customize your color transitions by choosing different curve functions to control the interpolation between colors. The default curve is linear, but you can define your own curve function for more advanced effects.
+
+```javascript
+import huefy from 'huefy';
+
+const customCurve = (value) => Math.pow(value, 2); // A simple quadratic curve
+
+const resultColor = huefy('#ff0000', '#0000ff', 0.5, { curve: customCurve, as: 'hex' });
+console.log(resultColor); // Outputs a color based on the custom curve
+```
+
+## 🔧 Command Line Usage
+
+Huefy can also be used directly from the command line.
+
+### Basic Usage
+
+```bash
+huefy <color1> <color2> <percentage> [options]
+```
+
+### Options
+
+- **-f, --format [format]:** Specify the output format (cmyk, rgb, rgba, hex, hsl, hsv, cmyk)
+
+### Version
+
+```bash
+huefy --version
+```
+
+### Example Commands
+
+Transition from red to blue at 50% and output the result in RGB format:
+
+```bash
+huefy '#ff0000' '#0000ff' 0.5 -f rgb
+```
+
+### Combining Options
+
+You can combine different options to customize the output:
+
+```bash
+huefy '#ff0000' 'rgba(0, 129, 201, 0.25)' 0.25 -f rgba
+```
+
+## 🔧 Acknowledgments & Contributions
+
+This package is built using great tools and libraries like `color-string` and `color-convert`. Contributions are welcome! Feel free to open issues or submit pull requests on GitHub.
