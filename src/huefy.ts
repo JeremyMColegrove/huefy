@@ -13,7 +13,7 @@ export interface TransitionOptions {
 export type HSVData = {hsv:[number, number, number], alpha:number}
 
 // Main transition function
-export default function huefy(color1: string, color2: string, value: number, options: TransitionOptions = {}): string | number[] {
+export default function huefy(color1: string, color2: string, value: number, options: TransitionOptions = {}): string {
     const { curve = linear, as = 'hex' } = options;
 
     const hsv1 = toHSV(color1);
