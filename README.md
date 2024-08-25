@@ -68,7 +68,7 @@ huefy <color1> <color2> <percentage> [options]
 
 ### Options
 
-- **-f, --format [format]:** Specify the output format (cmyk, rgb, rgba, hex, hsl, hsv, cmyk)
+- **-f, --format [format]:** Specify the output format (cmyk, rgb, rgba, hex, hsl, hsv)
 
 ### Version
 
