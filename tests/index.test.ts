@@ -86,4 +86,12 @@ describe('Transition between two colors', () => {
     var options: TransitionOptions = { curve: linear, as: 'hex' };
     expect(() => huefy(color1, color2, value, options)).toThrowError('Unsupported color format');
   });
+
+  it('Should blend between two HSL colors', () => {
+    var color1 = 'hsl(0, 100%, 50%)';
+    var color2 = 'hsl(240, 100%, 50%)';
+    var value = 0.5;
+    var options: TransitionOptions = { curve: linear, as: 'hsl' };
+    expect(huefy(color1, color2, value, options)).toBe('hsl(120, 100%, 50%)');
+  });
 });

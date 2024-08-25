@@ -1,6 +1,6 @@
 {
   "name": "huefy",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Smooth color transitions with customizable curves and support for multiple color formats like HEX, RGB, and RGBA.",
   "type": "module",
   "exports": {

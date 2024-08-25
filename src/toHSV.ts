@@ -27,10 +27,16 @@ export default function toHSV(color:string) {
                 return {hsv:[parseInt(match[1]), parseInt(match[2]), parseInt(match[3])], alpha:1} as HSVData;
             }
         }
+        if (color.startsWith('hsl')) {
+            var regex = /hsl?\((\d+).?,\s*(\d+)%?,\s*(\d+)%?\)/;
+            var match = color.match(regex);
+            if (match) {
+                return {hsv: convert.hsl.hsv([parseInt(match[1]), parseInt(match[2]), parseInt(match[3])]), alpha:1} as HSVData;
+            }
+        }
         // hex, hsl, hwb, rgb, rgba, hsla, keyword
         var parsed = colorstring.get(color)
         if (parsed && parsed.model && parsed.value) {
-            console.log(parsed)
             return {hsv:convert[parsed.model].hsv(parsed.value.slice(0, 3) as [number, number, number]), alpha:parsed.value[3]??1};
         }
     }
