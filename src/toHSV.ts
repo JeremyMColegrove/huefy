@@ -30,7 +30,8 @@ export default function toHSV(color:string) {
         // hex, hsl, hwb, rgb, rgba, hsla, keyword
         var parsed = colorstring.get(color)
         if (parsed && parsed.model && parsed.value) {
-            return {hsv:convert[parsed.model].hsv(parsed.value.slice(0, 3) as [number, number, number]), alpha:parsed.value[3]||1};
+            console.log(parsed)
+            return {hsv:convert[parsed.model].hsv(parsed.value.slice(0, 3) as [number, number, number]), alpha:parsed.value[3]??1};
         }
     }
     throw new Error(`Unsupported color format ${color}`);

@@ -30,15 +30,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "your-repo-here"
+    "url": "https://github.com/JeremyMColegrove/huefy"
   },
   "license": "MIT",
   "keywords": [],
   "author": "Jeremy Colegrove",
   "bugs": {
-    "url": "https://github.com/JeremyMColegrove/git-name-here/issues"
+    "url": "https://github.com/JeremyMColegrove/huefy/issues"
   },
-  "homepage": "https://github.com/JeremyMColegrove/git-name-here#readme",
+  "homepage": "https://github.com/JeremyMColegrove/huefy#readme",
   "devDependencies": {
     "@types/color-convert": "^2.0.3",
     "@types/color-string": "^1.5.5",
