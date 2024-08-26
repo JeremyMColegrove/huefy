@@ -1,4 +1,4 @@
-import linear from "./curves.js";
+import {linear} from "./curves.js";
 import hsvInterpolation from "./interpolate.js";
 import toHSV from "./toHSV.js";
 import convert from 'color-convert'

@@ -1,5 +1,7 @@
 import { HSVData } from "./huefy";
 
+
+
 // HSV interpolation function
 export default function hsvInterpolation(color1: HSVData, color2: HSVData, value: number): HSVData {
     // Interpolate the HSV values

@@ -38,6 +38,14 @@ describe('Transition between two colors', () => {
     expect(huefy(color1, color2, value, options)).toBe('hsv(240°, 75%, 75%)');
   });
 
+    it('Should clamp between 0 - 255', () => {
+    var color1 = 'hsv(180, 50%, 50%)';
+    var color2 = '#ff00ff33';
+    var value = 2;
+    var options: TransitionOptions = { curve: linear, as: 'hex' };
+    expect(huefy(color1, color2, value, options)).toBe('#ff00ff33');
+  });
+
   it('Should blend between rgba and hex', () => {
     var color1 = 'rgba(0, 0, 255, 0.5)';
     var color2 = '#00FF00';
