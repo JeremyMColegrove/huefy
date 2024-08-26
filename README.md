@@ -1,6 +1,8 @@
 # 🌟 Huefy
 
-Smooth color transitions with customizable curves and support for mixing multiple color formats like HEX, RGB, RGBA, HSL, HSV, HWB, CMYK, and color keywords.
+Smooth color interpolation with customizable curves and support for mixing multiple color formats like HEX, RGB, RGBA, HSL, HSV, HWB, CMYK, and color keywords.
+
+Given two colors c1 and c2, I want to find the color x percent of the way between them. That is, `(c1, c2, percentage)=>c3`
 
 ### Key Features:
 - **Smooth Interpolation:** Seamlessly transition between colors using customizable curve functions.
@@ -30,12 +32,12 @@ console.log(resultColor); // Outputs: rgb(128, 0, 128)
 ```
 
 ## 📸 Example
-
+How the interpolated colors look at various percentages between two colors:
 ![Color Transition Examples](./example_gradients.jpg)
 
 ## 🌟 Why Choose Huefy?
 
-Huefy provides a simple yet powerful way to create smooth color transitions with support for a wide range of color formats and customizable interpolation curves.
+Huefy provides a simple yet powerful way to create smooth color interpolations with support for a wide range of color formats and customizable interpolation curves. This package could be used to create your own gradients, fade colors in and out, etc.
 
 ## 🌍 Supported Environments
 

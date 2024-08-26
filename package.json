@@ -1,7 +1,7 @@
 {
   "name": "huefy",
-  "version": "1.0.5",
-  "description": "Smooth color transitions with customizable curves and support for multiple color formats like HEX, RGB, and RGBA.",
+  "version": "1.1.0",
+  "description": "Smooth color interpolation with customizable curves and support for multiple color formats like HEX, RGB, and RGBA.",
   "type": "module",
   "exports": {
     ".": {
@@ -33,7 +33,7 @@
     "url": "https://github.com/JeremyMColegrove/huefy"
   },
   "license": "MIT",
-  "keywords": ["color", "hue", "transition", "animation", "rgb", "rgba", "hex", "hsl", "hsla"],
+  "keywords": ["color", "hue", "transition", "interpolation", "animation", "rgb", "rgba", "hex", "hsl", "hsla"],
   "author": "Jeremy Colegrove",
   "bugs": {
     "url": "https://github.com/JeremyMColegrove/huefy/issues"
