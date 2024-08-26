@@ -21,7 +21,7 @@ export default function toHSV(color:string) {
         }
 
         if (color.startsWith('hsv')) {
-            var regex = /hsv?\((\d+)\s*,?\s*(\d+)%?\s*,?\s*(\d+)%?\)/;
+            var regex = /hsv?\((\d+)\s*°?,?\s*(\d+)%?\s*,?\s*(\d+)%?\)/;
             var match = color.match(regex);
             if (match) {
                 return {hsv:[parseInt(match[1]), parseInt(match[2]), parseInt(match[3])], alpha:1} as HSVData;
@@ -29,7 +29,7 @@ export default function toHSV(color:string) {
         }
 
         if (color.startsWith('hsl')) {
-            var regex = /hsl?\((\d+)\s*,?\s*(\d+)%?\s*,?\s*(\d+)%?\)/;
+            var regex = /hsl?\((\d+)\s*°?,?\s*(\d+)%?\s*,?\s*(\d+)%?\)/;
             var match = color.match(regex);
             if (match) {
                 return {hsv: convert.hsl.hsv([parseInt(match[1]), parseInt(match[2]), parseInt(match[3])]), alpha:1} as HSVData;
