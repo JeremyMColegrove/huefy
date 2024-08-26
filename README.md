@@ -2,7 +2,7 @@
 
 Smooth color interpolation with customizable curves and support for mixing multiple color formats like HEX, RGB, RGBA, HSL, HSV, HWB, CMYK, and color keywords.
 
-Given two colors c1 and c2, I want to find the color x percent of the way between them. That is, `(c1, c2, percentage)=>c3`
+The purpose of this package is to take two colors, and find the color x percentage of the way inbetween them.
 
 ### Key Features:
 - **Smooth Interpolation:** Seamlessly transition between colors using customizable curve functions.
