@@ -5,28 +5,33 @@ import convert from 'color-convert'
 import colorstring from 'color-string'
 
 export interface TransitionOptions {
-    curve?: (value: number) => number;
-    as?: 'hex' | 'rgba' | 'rgb' | 'hsl' | 'hsv' | 'cmyk';
+    curve: (value: number) => number;
+    as: 'hex' | 'rgba' | 'rgb' | 'hsl' | 'hsv' | 'cmyk';
 }
 
 // handle alpha channel seperate
 export type HSVData = {hsv:[number, number, number], alpha:number}
 
+const defaultOptions: TransitionOptions = {
+    curve: linear,
+    as: 'rgba'
+};
+
 // Main transition function
-export default function huefy(color1: string, color2: string, value: number, options: TransitionOptions = {}): string {
-    const { curve = linear, as = 'rgba' } = options;
+export default function huefy(color1: string, color2: string, value: number, options?: Partial<TransitionOptions>): string {
+    options = Object.assign(defaultOptions, options) as TransitionOptions;
 
     const hsv1 = toHSV(color1);
     const hsv2 = toHSV(color2);
 
     // Apply the curve function
-    const t = curve(value);
+    const t = options.curve!(value);
 
     // Perform the interpolation using HSV
     const resultRgba = hsvInterpolation(hsv1, hsv2, t);
 
     // Convert the result to the desired format
-    switch (as) {
+    switch (options.as) {
         case 'rgba':
             var rgba = convert.hsv.rgb(resultRgba.hsv).concat(resultRgba.alpha);
             return colorstring.to.rgb(rgba);
